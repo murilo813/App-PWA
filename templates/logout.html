@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Até logo - AgroZecão</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='icons/favicon.png') }}" type="image/png">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2e7d32;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .btn-voltar {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-voltar:hover {
+            background-color: #1b5e20;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você saiu do sistema</h1>
+    <p>Feche esta aba ou clique abaixo para voltar à página inicial.</p>
+    <a href="{{ url_for('home') }}" class="btn-voltarr">Voltar</a>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Estoque - AgroZecão</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/favicon.png') }}" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <h1>AgroZecão</h1>
+        <div class="btn-container">
+            <a href="{{ url_for('bela_vista') }}" class="btn">Bela Vista</a>
+            <a href="{{ url_for('imbuia') }}" class="btn">Imbuia</a>
+            <a href="{{ url_for('vila_nova') }}" class="btn">Vila Nova</a>
+            <a href="{{ url_for('aurora') }}" class="btn">Aurora</a>
+            <a href="#" class="btn btn-sair" onclick="sair()">Sair</a>
+        </div>
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/static/service-worker.js')
+                .then(registration => {
+                console.log('Service Worker registrado com sucesso:', registration);
+                })
+                .catch(error => {
+                console.log('Erro ao registrar o Service Worker:', error);
+                });
+            });
+        }
+        function sair() {
+            window.open('', '_self'); 
+            window.close(); 
+        }
+    </script>
+</body>
+</html>
